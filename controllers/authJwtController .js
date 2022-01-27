@@ -64,7 +64,7 @@ exports.login = async (req, res) => {
       });
 
     const admin = await Admin.findOne({ email: email, removed: false });
-    //console.log(admin);
+    // console.log(admin);
     if (!admin)
       return res.status(400).json({
         success: false,
