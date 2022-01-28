@@ -1,4 +1,4 @@
-const express = require('express');
+//const express = require('express');
 const mongoose = require('mongoose');
 
 // Make sure we you running node 7.6+
@@ -35,12 +35,6 @@ glob.sync('./models/*.js').forEach(function (file) {
 // Start our app!
 const app = require('./app');
 
-// server configuration
-app.use(express.static(path.join(__dirname, '/client/build')));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
-});
 
 app.set('port', process.env.PORT || 8888);
 const server = app.listen(app.get('port'), () => {
