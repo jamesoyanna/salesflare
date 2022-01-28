@@ -1,18 +1,18 @@
 import axios from 'axios';
-import { API_BASE_URL, axiosInstance } from '@/config/serverApiConfig';
+import { API_BASE_URL } from '@/config/serverApiConfig';
 
 import errorHandler from './errorHandler';
 import successHandler from './successHandler';
 
-axiosInstance.defaults.baseURL = API_BASE_URL;
-axiosInstance.defaults.withCredentials = true;
+axios.defaults.baseURL = API_BASE_URL;
+axios.defaults.withCredentials = true;
 
 const request = {
   create: async ({ entity, jsonData }) => {
     //console.log('🚀 Create Request 🚀 ~ file: request.js ~ line 19 ~ create: ~ jsonData', jsonData);
 
     try {
-      const response = await axiosInstance.post(entity + '/create', jsonData);
+      const response = await axios.post(entity + '/create', jsonData);
       successHandler(response, {
         notifyOnSuccess: true,
         notifyOnFailed: true,
@@ -39,7 +39,7 @@ const request = {
     //console.log('🚀 Update Request 🚀 ~ file: request.js ~ line 42 ~ update: ~ jsonData', jsonData);
 
     try {
-      const response = await axiosInstance.patch(entity + '/update/' + id, jsonData);
+      const response = await axios.patch(entity + '/update/' + id, jsonData);
       successHandler(response, {
         notifyOnSuccess: true,
         notifyOnFailed: true,
@@ -52,7 +52,7 @@ const request = {
 
   delete: async ({ entity, id, options = {} }) => {
     try {
-      const response = await axiosInstance.delete(entity + '/delete/' + id);
+      const response = await axios.delete(entity + '/delete/' + id);
       successHandler(response, {
         notifyOnSuccess: true,
         notifyOnFailed: true,
@@ -69,7 +69,7 @@ const request = {
       let equal = options.equal ? '&equal=' + options.equal : '';
       let query = `?${filter}${equal}`;
 
-      const response = await axiosInstance.get(entity + '/filter' + query);
+      const response = await axios.get(entity + '/filter' + query);
       successHandler(response, {
         notifyOnSuccess: false,
         notifyOnFailed: false,
@@ -88,7 +88,7 @@ const request = {
       }
       query = query.slice(0, -1);
       // headersInstance.cancelToken = source.token;
-      const response = await axiosInstance.get(entity + '/search' + query);
+      const response = await axios.get(entity + '/search' + query);
 
       successHandler(response, {
         notifyOnSuccess: false,
@@ -108,7 +108,7 @@ const request = {
       }
       query = query.slice(0, -1);
 
-      const response = await axiosInstance.get(entity + '/list' + query);
+      const response = await axios.get(entity + '/list' + query);
 
       successHandler(response, {
         notifyOnSuccess: false,
@@ -122,7 +122,7 @@ const request = {
 
   post: async ({ entity, jsonData, options = {} }) => {
     try {
-      const response = await axiosInstance.post(entity, jsonData);
+      const response = await axios.post(entity, jsonData);
 
       return response.data;
     } catch (error) {
@@ -131,7 +131,7 @@ const request = {
   },
   get: async ({ entity }) => {
     try {
-      const response = await axiosInstance.get(entity);
+      const response = await axios.get(entity);
       return response.data;
     } catch (error) {
       return errorHandler(error);
@@ -139,7 +139,7 @@ const request = {
   },
   patch: async ({ entity, jsonData }) => {
     try {
-      const response = await axiosInstance.patch(entity, jsonData);
+      const response = await axios.patch(entity, jsonData);
       successHandler(response, {
         notifyOnSuccess: true,
         notifyOnFailed: true,
@@ -151,7 +151,7 @@ const request = {
   },
 
   source: () => {
-    const CancelToken = axiosInstance.CancelToken;
+    const CancelToken = axios.CancelToken;
     const source = CancelToken.source();
     return source;
   },

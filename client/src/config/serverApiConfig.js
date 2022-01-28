@@ -1,7 +1,7 @@
- import axios from 'axios';
- export const axiosInstance = axios.create({
-   baseURL: 'https://salesflare-dashboard.herokuapp.com/api/',
- });
+//  import axios from 'axios';
+//  export const axiosInstance = axios.create({
+//    baseURL: 'https://salesflare-dashboard.herokuapp.com/api/',
+//  });
  
  
  export const API_BASE_URL = 'https://salesflare-dashboard.herokuapp.com/api/';
