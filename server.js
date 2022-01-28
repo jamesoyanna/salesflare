@@ -1,4 +1,4 @@
-//const express = require('express');
+const express = require('express');
 const mongoose = require('mongoose');
 
 // Make sure we you running node 7.6+
@@ -8,8 +8,12 @@ if (major < 7 || (major === 7 && minor <= 5)) {
   process.exit();
 }
 
+
 // import environmental variables from our variables.env file
 require('dotenv').config({ path: '.variables.env' });
+
+
+
 
 // Connect to our Database and handle any bad connections
 // mongoose.connect(process.env.DATABASE);
@@ -32,8 +36,24 @@ glob.sync('./models/*.js').forEach(function (file) {
   require(path.resolve(file));
 });
 
+
+
 // Start our app!
 const app = require('./app');
+
+
+
+// server configuration
+app.use(
+  express.static(path.join(__dirname, "/client/build"))
+);
+
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "/client/build", "index.html")
+  );
+});
+
 
 
 app.set('port', process.env.PORT || 8888);
