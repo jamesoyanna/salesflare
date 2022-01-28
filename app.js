@@ -15,7 +15,7 @@ const errorHandlers = require('./handlers/errorHandlers');
 
 const { isValidToken } = require('./controllers/authJwtController ');
 
-require('dotenv').config({ path: '.variables.env' });
+require('dotenv').config({ path: '.env' });
 // create our Express app
 const app = express();
 // serves up static files from the public folder. Anything in public/ will just be served up as the file it is
