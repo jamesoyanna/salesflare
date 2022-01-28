@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Divider } from 'antd';
 
-import { Button, PageHeader, Row, Statistic, Tag } from 'antd';
+import { Button, PageHeader, Tag } from 'antd';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { erp } from '@/redux/erp/actions';
@@ -19,7 +19,7 @@ function SaveForm({ form }) {
 
   return (
     <Button onClick={handelClick} type="primary" icon={<PlusOutlined />}>
-      Save Erp
+      Save
     </Button>
   );
 }

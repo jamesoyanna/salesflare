@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Divider } from 'antd';
 import dayjs from 'dayjs';
-import { Button, PageHeader, Row, Statistic, Tag } from 'antd';
+import { Button, PageHeader } from 'antd';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { erp } from '@/redux/erp/actions';
@@ -20,7 +20,7 @@ function SaveForm({ form }) {
 
   return (
     <Button onClick={handelClick} type="primary" icon={<PlusOutlined />}>
-      Save Erp
+      Save
     </Button>
   );
 }
@@ -33,7 +33,7 @@ export default function UpdateItem({ config, UpdateForm }) {
   const { current, isLoading, isSuccess } = useSelector(selectUpdatedItem);
   const [form] = Form.useForm();
   const [subTotal, setSubTotal] = useState(0);
-  const [autoCompleteValue, setAutoCompleteValue] = useState('');
+  //const [autoCompleteValue, setAutoCompleteValue] = useState('');
 
   const handelValuesChange = (changedValues, values) => {
     const items = values['items'];
@@ -80,7 +80,7 @@ export default function UpdateItem({ config, UpdateForm }) {
     }
 
     const id = current._id;
-    console.log('🚀 ~ file: UpdateItem.jsx ~ line 88 ~ onSubmit ~ fieldsValue', fieldsValue);
+    //console.log('🚀 ~ file: UpdateItem.jsx ~ line 88 ~ onSubmit ~ fieldsValue', fieldsValue);
     dispatch(erp.update({ entity, id, jsonData: fieldsValue }));
   };
   useEffect(() => {

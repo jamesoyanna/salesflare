@@ -6,8 +6,8 @@ import { crud } from '@/redux/crud/actions';
 import { useCrudContext } from '@/context/crud';
 import { selectUpdatedItem } from '@/redux/crud/selectors';
 
-import { isDate } from '@/utils/helpers';
-import { selectCurrentItem } from '@/redux/crud/selectors';
+//import { isDate } from '@/utils/helpers';
+//import { selectCurrentItem } from '@/redux/crud/selectors';
 
 import { Button, Form } from 'antd';
 import Loading from '@/components/Loading';
@@ -31,7 +31,7 @@ export default function UpdateForm({ config, formElements }) {
   const [form] = Form.useForm();
 
   const onSubmit = (fieldsValue) => {
-    console.log('🚀 ~ file: index.jsx ~ line 34 ~ onSubmit ~  current._id', current._id);
+    //console.log('🚀 ~ file: index.jsx ~ line 34 ~ onSubmit ~  current._id', current._id);
     const id = current._id;
     dispatch(crud.update({ entity, id, jsonData: fieldsValue }));
   };
@@ -69,7 +69,7 @@ export default function UpdateForm({ config, formElements }) {
         };
       }
 
-      console.log('🚀 ~ file: index.jsx ~ line 40 ~ useEffect ~ obj', newValues);
+      //console.log('🚀 ~ file: index.jsx ~ line 40 ~ useEffect ~ obj', newValues);
       form.setFieldsValue(newValues);
     }
   }, [current]);

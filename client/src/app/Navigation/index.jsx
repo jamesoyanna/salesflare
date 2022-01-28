@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 
 import { useAppContext } from '@/context/appContext';
-import logoIcon from '@/style/images/logo-s.png';
 import logoText from '@/style/images/logo-w.png';
 
 import {

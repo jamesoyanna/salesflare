@@ -40,7 +40,7 @@ methods.update = async (req, res) => {
     return res.status(200).json({
       success: true,
       result,
-      message: 'we update this document by this id: ' + req.params.id,
+      message: 'Sucessfully Updated',
     });
   } catch (err) {
     // If err is thrown by Mongoose due to required validations

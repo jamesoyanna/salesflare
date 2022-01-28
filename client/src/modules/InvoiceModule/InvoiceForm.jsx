@@ -203,7 +203,7 @@ export default function InvoiceForm({ subTotal = 0, current = null }) {
                 readOnly
                 style={{ width: '100%' }}
                 value={subTotal}
-                formatter={(value) => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
+                formatter={(value) => `₦ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
               />
             </Form.Item>
           </Col>
@@ -235,7 +235,7 @@ export default function InvoiceForm({ subTotal = 0, current = null }) {
                 readOnly
                 style={{ width: '100%' }}
                 value={taxTotal}
-                formatter={(value) => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
+                formatter={(value) => `₦ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
               />
             </Form.Item>
           </Col>
@@ -255,7 +255,7 @@ export default function InvoiceForm({ subTotal = 0, current = null }) {
                 readOnly
                 style={{ width: '100%' }}
                 value={total}
-                formatter={(value) => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
+                formatter={(value) => `₦ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
               />
             </Form.Item>
           </Col>

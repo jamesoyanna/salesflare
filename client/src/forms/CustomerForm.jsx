@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, Input } from 'antd';
+import { Form, Input } from 'antd';
 
 export default function CustomerForm({ isUpdateForm = false }) {
   return (
@@ -17,7 +17,7 @@ export default function CustomerForm({ isUpdateForm = false }) {
         <Input />
       </Form.Item>
       <Form.Item
-        label="Sur Name"
+        label="Surname"
         name="managerSurname"
         rules={[
           {

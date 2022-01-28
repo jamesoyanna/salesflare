@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
-import { Dropdown, Button, PageHeader, Table, Col } from 'antd';
+import { Dropdown, Button, PageHeader, Table } from 'antd';
 
 import { EllipsisOutlined } from '@ant-design/icons';
 import { useSelector, useDispatch } from 'react-redux';

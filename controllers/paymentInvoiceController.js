@@ -69,11 +69,7 @@ methods.create = async (req, res) => {
       }
     ).exec();
 
-    // custom.generatePdf(
-    //   "PaymentInvoice",
-    //   { filename: "payment-invoice-report", format: "A5" },
-    //   result
-    // );
+   
 
     const [updatedResult, invoiceUpdated] = await Promise.all([updatePath, invoiceUpdate]);
     res.status(200).json({
@@ -219,7 +215,7 @@ methods.delete = async (req, res) => {
       return res.status(404).json({
         success: false,
         result: null,
-        message: 'No document found by this id: ' + req.params.id,
+        message: 'No document found',
       });
     }
 
@@ -266,7 +262,7 @@ methods.delete = async (req, res) => {
     return res.status(200).json({
       success: true,
       result,
-      message: 'Successfully Deleted the document by id: ' + req.params.id,
+      message: 'Successfully Deleted',
     });
   } catch (err) {
     return res.status(500).json({

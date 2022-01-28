@@ -16,7 +16,7 @@ export default function LoginForm() {
       >
         <Input
           prefix={<UserOutlined className="site-form-item-icon" />}
-          placeholder="admin@demo.com"
+          placeholder="admin@gmail.com"
           autoComplete="off"
           size="large"
         />

@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Form, Input, InputNumber, Space, Row, Col } from 'antd';
+import React, { useState, useEffect } from 'react';
+import { Form, Input, InputNumber, Row, Col } from 'antd';
 import { DeleteOutlined } from '@ant-design/icons';
 
 export default function ItemRow({
@@ -71,7 +71,7 @@ export default function ItemRow({
             style={{ width: '100%' }}
             onChange={updatePrice}
             min={0}
-            formatter={(value) => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
+            formatter={(value) => `₦ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
           />
         </Form.Item>
       </Col>
@@ -82,7 +82,7 @@ export default function ItemRow({
               readOnly
               style={{ width: '100%' }}
               value={totalState}
-              formatter={(value) => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
+              formatter={(value) => `₦ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
             />
           </Form.Item>
         </Form.Item>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { crud } from '@/redux/crud/actions';
@@ -19,7 +19,7 @@ export default function UpdatePassword({ config }) {
 
   const [form] = Form.useForm();
 
-  const { onFetch, result, isLoading, isSuccess } = useOnFetch();
+  const { onFetch, isLoading, isSuccess } = useOnFetch();
 
   const handelSubmit = (fieldsValue) => {
     const entity = 'admin/password-update/' + current._id;

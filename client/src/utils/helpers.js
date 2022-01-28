@@ -4,18 +4,7 @@ function getPageQuery() {
   parse(window.location.href.split('?')[1]);
 }
 
-/* 
- To get nested object properties.
- admin = {
-    location: {
-        lat: 50,
-        long: 9
-    }
- }
 
- get(admin, 'location.lat')     // 50
- get(admin, 'location.foo.bar') // undefined
-*/
 
 export function get(obj, key) {
   return key.split('.').reduce(function (o, x) {

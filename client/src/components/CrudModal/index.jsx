@@ -11,7 +11,7 @@ export default function DeleteModal({ config, children }) {
   let {
     entity,
     entityDisplayLabels,
-    deleteMessage = 'Do you want delete : ',
+    //deleteMessage = 'Do you want delete : ',
     modalTitle = 'Remove Item',
   } = config;
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ export default function DeleteModal({ config, children }) {
   const { state, crudContextAction } = useCrudContext();
   const { isModalOpen } = state;
   const { modal } = crudContextAction;
-  const [displayItem, setDisplayItem] = useState('');
+  const [ setDisplayItem] = useState('');
 
   useEffect(() => {
     if (isSuccess) {

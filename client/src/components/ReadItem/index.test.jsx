@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, screen, act } from '@testing-library/react';
+import { render, act } from '@testing-library/react';
 
 import { Provider } from 'react-redux';
 
@@ -11,11 +11,11 @@ import FeedStoreMock from '@/test/mocksComponent/FeedStoreMock';
 import { crud } from '@/redux/crud/actions';
 
 const data = {
-  company: 'IDURAR',
-  managerSurname: 'Lalami ',
-  managerName: 'Salah Eddine',
-  email: 'idurardz@gmail.com',
-  phone: '05541 144 700',
+  company: 'Onesphere Solutions Ltd',
+  managerSurname: 'James ',
+  managerName: 'Oyanna',
+  email: 'engrjayt200@gmail.com',
+  phone: '08012345678',
 };
 
 const readColumns = [

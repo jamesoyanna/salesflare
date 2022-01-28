@@ -52,7 +52,7 @@ exports.create = async (Model, req, res) => {
     return res.status(200).json({
       success: true,
       result,
-      message: 'Successfully Created the document in Model ',
+      message: 'Successfully Created',
     });
   } catch (err) {
     // If err is thrown by Mongoose due to required validations
@@ -92,13 +92,13 @@ exports.update = async (Model, req, res) => {
       return res.status(404).json({
         success: false,
         result: null,
-        message: 'No document found by this id: ' + req.params.id,
+        message: 'No document found',
       });
     } else {
       return res.status(200).json({
         success: true,
         result,
-        message: 'we update this document by this id: ' + req.params.id,
+        message: 'Document Updated ',
       });
     }
   } catch (err) {
@@ -147,13 +147,13 @@ exports.delete = async (Model, req, res) => {
       return res.status(404).json({
         success: false,
         result: null,
-        message: 'No document found by this id: ' + req.params.id,
+        message: 'No document found',
       });
     } else {
       return res.status(200).json({
         success: true,
         result,
-        message: 'Successfully Deleted the document by id: ' + req.params.id,
+        message: 'Successfully Deleted',
       });
     }
   } catch (err) {

@@ -53,7 +53,7 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    console.log('🚀 ~ file: authJwtController .js ~ line 62 ~ exports.login= ~ req.body', req.body);
+    //console.log('🚀 ~ file: authJwtController .js ~ line 62 ~ exports.login= ~ req.body', req.body);
 
     // validate
     if (!email || !password)
@@ -124,10 +124,10 @@ exports.login = async (req, res) => {
 exports.isValidToken = async (req, res, next) => {
   try {
     const token = req.cookies.token;
-    console.log(
-      '🚀 ~ file: authJwtController .js ~ line 130 ~ exports.isValidToken= ~ token',
-      token
-    );
+    // console.log(
+    //   '🚀 ~ file: authJwtController .js ~ line 130 ~ exports.isValidToken= ~ token',
+    //   token
+    // );
 
     if (!token)
       return res.status(401).json({

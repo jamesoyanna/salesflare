@@ -106,7 +106,7 @@ const PreviewState = ({ tag, color, value }) => {
   );
 };
 export default function Dashboard() {
-  const entity = 'invoice213';
+  //const entity = 'invoice213';
   const dataTableColumns = [
     {
       title: 'N#',
@@ -121,7 +121,7 @@ export default function Dashboard() {
       title: 'Total',
       dataIndex: 'total',
 
-      render: (total) => `$ ${total}`.replace(/\B(?=(\d{3})+(?!\d))/g, ' '),
+      render: (total) => `₦ ${total}`.replace(/\B(?=(\d{3})+(?!\d))/g, ' '),
     },
     {
       title: 'Status',
@@ -138,29 +138,19 @@ export default function Dashboard() {
   return (
     <DashboardLayout>
       <Row gutter={[24, 24]}>
-        <TopCard
-          title={'Invoice'}
-          tagColor={'cyan'}
-          prefix={'This month'}
-          tagContent={'34 000 $'}
-        />
-        <TopCard
-          title={'Quote'}
-          tagColor={'purple'}
-          prefix={'This month'}
-          tagContent={'34 000 $'}
-        />
+        <TopCard title={'Invoice'} tagColor={'cyan'} prefix={'This month'} tagContent={'₦70,000'} />
+        <TopCard title={'Quote'} tagColor={'purple'} prefix={'This month'} tagContent={'₦10,000'} />
         <TopCard
           title={'Payment'}
           tagColor={'green'}
           prefix={'This month'}
-          tagContent={'34 000 $'}
+          tagContent={'₦250,000'}
         />
         <TopCard
           title={'Due Balance'}
           tagColor={'red'}
           prefix={'Not Paid'}
-          tagContent={'34 000 $'}
+          tagContent={'₦120,000 '}
         />
       </Row>
       <div className="space30"></div>

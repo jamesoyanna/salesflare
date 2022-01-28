@@ -1,12 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Divider } from 'antd';
 
 import { Button, PageHeader, Row, Col, Descriptions, Statistic, Tag } from 'antd';
 import {
   EditOutlined,
   FilePdfOutlined,
-  RollbackOutlined,
-  PlusCircleOutlined,
   CloseCircleOutlined,
 } from '@ant-design/icons';
 
@@ -69,7 +67,7 @@ export default function ReadItem({ config }) {
   const { erpContextAction } = useErpContext();
 
   const { result: currentResult } = useSelector(selectCurrentItem);
-  const { state } = useErpContext();
+  //const { state } = useErpContext();
 
   const { readPanel, updatePanel } = erpContextAction;
 
@@ -146,7 +144,7 @@ export default function ReadItem({ config }) {
             type="primary"
             icon={<EditOutlined />}
           >
-            Edit Erp
+            Edit
           </Button>,
         ]}
         style={{
@@ -157,7 +155,7 @@ export default function ReadItem({ config }) {
           <Statistic title="Status" value={currentErp.status} />
           <Statistic
             title="SubTotal"
-            prefix="$"
+            prefix="₦"
             value={currentErp.subTotal}
             style={{
               margin: '0 32px',
@@ -165,7 +163,7 @@ export default function ReadItem({ config }) {
           />
           <Statistic
             title="Total"
-            prefix="$"
+            prefix="₦"
             value={currentErp.total}
             style={{
               margin: '0 32px',
@@ -173,7 +171,7 @@ export default function ReadItem({ config }) {
           />
           <Statistic
             title="Balance"
-            prefix="$"
+            prefix="₦"
             value={currentErp.credit}
             style={{
               margin: '0 32px',
@@ -241,7 +239,7 @@ export default function ReadItem({ config }) {
 
           <Col className="gutter-row" span={12}>
             <p>
-              {`$ `}
+              {`₦ `}
               {currentErp.subTotal.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
             </p>
           </Col>
@@ -250,7 +248,7 @@ export default function ReadItem({ config }) {
           </Col>
           <Col className="gutter-row" span={12}>
             <p>
-              {`$ `}
+              {`₦ `}
               {currentErp.taxTotal.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
             </p>
           </Col>
@@ -259,7 +257,7 @@ export default function ReadItem({ config }) {
           </Col>
           <Col className="gutter-row" span={12}>
             <p>
-              {`$ `}
+              {`₦ `}
               {currentErp.total.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
             </p>
           </Col>

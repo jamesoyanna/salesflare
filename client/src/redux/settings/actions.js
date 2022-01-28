@@ -2,7 +2,7 @@ import * as actionTypes from './types';
 
 export const settings = {
   currencySymbol:
-    ({ value = '$' }) =>
+    ({ value = '₦' }) =>
     async (dispatch) => {
       dispatch({
         type: actionTypes.SET_STATE,

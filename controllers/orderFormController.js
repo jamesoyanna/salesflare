@@ -67,7 +67,7 @@ methods.create = async (req, res) => {
     res.status(200).json({
       success: true,
       result,
-      message: 'Successfully created the Quote in Model',
+      message: 'Successfully created',
     });
   } catch (err) {
     // If err is thrown by Mongoose due to required validations
@@ -142,7 +142,7 @@ methods.update = async (req, res) => {
     res.status(200).json({
       success: true,
       result,
-      message: 'Successfully updated the Quote in Model',
+      message: 'Successfully Updated',
     });
   } catch (err) {
     // If err is thrown by Mongoose due to required validations

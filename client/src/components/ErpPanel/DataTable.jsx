@@ -1,24 +1,20 @@
 import React, { useCallback, useEffect } from 'react';
-import { Dropdown, Menu, Table } from 'antd';
-import { Button, PageHeader, Tag } from 'antd';
+import { Dropdown, Table } from 'antd';
+import { Button, PageHeader } from 'antd';
 import {
   EllipsisOutlined,
-  EyeOutlined,
-  EditOutlined,
-  DeleteOutlined,
-  FilePdfOutlined,
-  CreditCardOutlined,
+ 
 } from '@ant-design/icons';
 import { useSelector, useDispatch } from 'react-redux';
 import { erp } from '@/redux/erp/actions';
 import { settings } from '@/redux/settings/actions';
-import { selectListItems, selectItemById } from '@/redux/erp/selectors';
+import { selectListItems } from '@/redux/erp/selectors';
 import { useErpContext } from '@/context/erp';
 import uniqueId from '@/utils/uinqueId';
-import { DOWNLOAD_BASE_URL } from '@/config/serverApiConfig';
+//import { DOWNLOAD_BASE_URL } from '@/config/serverApiConfig';
 import { RedoOutlined, PlusOutlined } from '@ant-design/icons';
 function AddNewItem({ config }) {
-  const { ADD_NEW_ENTITY, DATATABLE_TITLE } = config;
+  const { ADD_NEW_ENTITY } = config;
   const { erpContextAction } = useErpContext();
   const { createPanel } = erpContextAction;
   const handelClick = () => {
@@ -59,7 +55,7 @@ export default function DataTable({ config, DataTableDropMenu }) {
   }, []);
 
   const handelCurrency = () => {
-    dispatch(settings.currency({ value: '€' }));
+    dispatch(settings.currency({ value: '₦' }));
     dispatch(settings.currencyPosition({ position: 'before' }));
   };
   useEffect(() => {

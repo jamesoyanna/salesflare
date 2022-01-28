@@ -289,8 +289,9 @@ exports.update = async (req, res) => {
       return res.status(404).json({
         success: false,
         result: null,
-        message: 'No document found by this id: ' + req.params.id,
+        message: 'No document found',
       });
+      
     }
     return res.status(200).json({
       success: true,
