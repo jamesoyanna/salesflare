@@ -1,4 +1,4 @@
-import { API_BASE_URL } from '@/config/serverApiConfig';
+import { API_BASE_URL, axiosInstance } from '@/config/serverApiConfig';
 
 import axios from 'axios';
 import errorHandler from '@/request/errorHandler';
@@ -39,7 +39,7 @@ export const logout = async () => {
   axios.defaults.withCredentials = true;
   try {
     window.localStorage.clear();
-    await axios.post(API_BASE_URL + `logout?timestamp=${new Date().getTime()}`);
+    await axiosInstance.post(API_BASE_URL + `logout?timestamp=${new Date().getTime()}`);
   } catch (error) {
     return errorHandler(error);
   }
