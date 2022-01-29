@@ -5,7 +5,7 @@ package-lock.json
 .DS_Store
 .idea
 notes.md
-.variables.env
+.env
 .eslintrc.js
 public
 views
