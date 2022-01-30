@@ -30,7 +30,7 @@
     "craco-less": "^1.17.1"
   },
   "scripts": {
-      "start": "react-scripts start",
+       "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "craco test",
     "eject": "react-scripts eject"
