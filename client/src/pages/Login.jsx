@@ -41,7 +41,7 @@ const SideContent = () => {
 
           <li className="list-checked-item">
             <Space direction="vertical">
-              <Text strong>Easily add &amp; manage your services</Text>
+              <Text strong>Easily add &amp; manage your business operations</Text>
               <Text>Manage your employees, issue invoice, manage payment and customers all in one place.</Text>
             </Space>
           </li>
