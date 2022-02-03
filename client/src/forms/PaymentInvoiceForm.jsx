@@ -44,7 +44,7 @@ export default function PaymentInvoiceForm({ maxAmount = null, isUpdateForm = fa
           style={{ width: '100%' }}
           min={0}
           max={maxAmount}
-          formatter={(value) => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
+          formatter={(value) => `₦ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
         />
       </Form.Item>
       <Form.Item
