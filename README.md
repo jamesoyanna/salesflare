@@ -29,7 +29,7 @@ Using the employee feature, you can manage your employees by adding all your emp
 
 Home page
 
-[landing-page](https://user-images.githubusercontent.com/26815113/155301682-8ee0897e-5658-4108-8727-539f61e83a30.PNG)
+![landing-page](https://user-images.githubusercontent.com/26815113/155301682-8ee0897e-5658-4108-8727-539f61e83a30.PNG)
 
 
 
