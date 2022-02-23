@@ -87,12 +87,10 @@ The project is built with;
 ##### Server Side
 * [Express JS](https://expressjs.com/) - flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 * [Bcrypt JS](https://www.npmjs.com/package/bcrypt) - This module enables storing of passwords as hashed passwords instead of plaintext.
-* [HTML-PDF](https://www.npmjs.com/package/html-pdf?activeTab=readme) - HTML to PDF converter that uses phantomjs
-* [Mongoose](https://mongoosejs.com) - Provides a straight-forward, schema-based solution to model application data 
-* [Nodemailer](https://nodemailer.com/about) - A module for Node.js applications to allow easy as cake email sending.
+* [Mongoose](https://mongoosejs.com) - Provides a straight-forward, schema-based solution to model application data.
 * [Node.js](https://nodejs.org/en)- Cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.
 
-* [dotenv](https://www.npmjs.com/package/dotenv)- dotenv allows you to separate secrets from your source code..
+* [dotenv](https://www.npmjs.com/package/dotenv)- dotenv allows you to separate secrets from your source code.
 
 ##### Database
 * [MongoDB](https://www.mongodb.com)- As a document database, MongoDB makes it easy for developers to store structured or unstructured data
