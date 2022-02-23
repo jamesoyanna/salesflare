@@ -25,6 +25,10 @@ Using the employee feature, you can manage your employees by adding all your emp
 
 #### Live view of the application Demo can be found here- [Salesflare application](https://salesfla)
 
+#### Login Credentials : 
+##### Username: admin@gmail.com, 
+##### Password: admin123
+
 ### Pictorial View of the Application
 
 Home page
