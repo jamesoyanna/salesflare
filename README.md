@@ -73,16 +73,31 @@ Adding New Payment Invoice:
 ## Getting Started
 
 #### Dependencies
+##### Client Side
+
 The project is built with;
 * [React JS](https://beta.reactjs.org/) -Library for building user interfaces
-* [GraphQL](https://graphql.org/learn/) - Open-source data query and manipulation language for APIs
-* [Apollo Client](https://www.apollographql.com/docs/react/) - Production-ready, caching GraphQL client
-* [CSS]()
+* [Axios](https://axios-http.com) - Promise based HTTP client for the browser and node.js
+* [Redux](https://redux.js.org/) - A Predictable State Container for JavaScript Applications.
+* [Redux-Thunk](https://www.npmjs.com/package/redux-thunk) - A middleware that lets you call action creators that return a function instead of an action object.
+* [React-router](https://reactrouter.com) - Enables the to implementation of dynamic routing in a web app.
+* [Ant Design](https://ant.design) - A UI library that can be used with data flow solutions and application frameworks in any React ecosystem.
 
-It uses [Node.js >= 12.18.3](https://nodejs.org/en/) 
 
+##### Server Side
+* [Express JS](https://expressjs.com/) - flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+* [Bcrypt JS](https://www.npmjs.com/package/bcrypt) - This module enables storing of passwords as hashed passwords instead of plaintext.
+* [HTML-PDF](https://www.npmjs.com/package/html-pdf?activeTab=readme) - HTML to PDF converter that uses phantomjs
+* [Mongoose](https://mongoosejs.com) - Provides a straight-forward, schema-based solution to model application data 
+* [Nodemailer](https://nodemailer.com/about) - A module for Node.js applications to allow easy as cake email sending.
+* [Node.js](https://nodejs.org/en)- Cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.
 
-```
+* [dotenv](https://www.npmjs.com/package/dotenv)- dotenv allows you to separate secrets from your source code..
+
+##### Database
+* [MongoDB](https://www.mongodb.com)- As a document database, MongoDB makes it easy for developers to store structured or unstructured data
+
+ 
 ### Prerequisites
 Ensure you have NodeJS installed by entering node -v on your terminal If you don't have NodeJS installed, go to the NodeJS Website, and follow the download instructions
 
@@ -95,7 +110,8 @@ The following tools are required to run this application:
 
 ### Getting the source code
 You can clone the repository directly using this command:
-git clone git@github.com:jamesoyanna/QuidaxBook-App.git
+git clone https://github.com/jamesoyanna/salesflare.git
+OR clicking on the code button ontop to clone the application.
 
 ### Installation
 Installation steps:
@@ -106,102 +122,32 @@ Your computer must have installed nodejs, and yarn to run this application You c
 ![nodejs](https://user-images.githubusercontent.com/26815113/132867561-bf2ec1a2-cd63-461f-95dd-e95c1c6676c7.PNG)
 
 ## Install Npm Packages
-After clonning the application, You will have to install all the dependencies and packages. You can do this by running yarn or npm install from the root of the project folder to install.
+After clonning the application, to run the client application locally, you will have to install all the dependencies and packages. 
+Open your terminal and navigate into the client folder using the command:
+cd client
 
-### Development server
+ Run yarn or npm install from the root of the client folder.
 
 
-#### Running the App
+#### Running the client App
 
   ``` 
-Run yarn start or npm stall from the root of your project to start a dev server. 
-Navigate to http://localhost:3000/. 
+Run yarn start or npm start from the root of the client folder to start the development server. 
+Go to http://localhost:3000 on your browser. Your app should be running.
 The app will automatically reload if you make changes to any of the source files.
   ```
 
-## Deployment
+#### Running the Server
+Open the project folder you cloned. 
+Create a .env file in the root folder
+Fill in the following credentials:
+PORT = 
+DATABASE =
+JWT_SECRET =
 
-You can deploy the application on any server. You can make use of Netlify,a git-based workflow and powerful serverless platform to build, deploy, and collaborate on web apps. Visit [Netlify](https://www.netlify.com/)
-
-## Assumptions/ Thought process: 
-- I have assumed that this is a not-so-large application and may require minimal state management. 
-So to avoid over-engineering the solution,  I used the React Context API for my state management compared to using other state management libraries like Redux.
-
- The Context API enables me to share my application state, data, and functionalities between components without having to explicitly pass a prop through every level of my component tree.
-
-
-- I also have assumed that the data may not be persisted in local storage. So when a book item is added to the cart, on the refresh of the application, the value of the cart state gets reinitialized and its state is set back to zero.
-
-
-### How I manage the application state:
-First, I created the cart Context, which I use to create my application state and functions across different components.
-
-I used the useContext hooks to access my state in the component I need it.
-
-## My Approach to the challenge:
-I created the project using create-react-app, a popular command-line tool that enable me to set up react applications with zero or minimal configuration and setup.
-
-Next was to load the data that is stored in the database. 
-Having gone through this https://quidax-feec-graphql.herokuapp.com/graphql GraphQL API documentation sent with this challenge,
-
-I implemented GraphQL Queries with Apollo CLient and integrate them with the react UI.
-
-Using  Apollo Client, I was able to send queries with React useQuery React hook.
-
-I first of all defined the GraphQL query I want to
-send to the API.
-
-It looks like this;
-```
-import { gql } from "@apollo/client";
-<!--- GraphQL query to fetch all book items -->
-
-export const BOOK_QUERY = gql`
-  {
-    books {
-      id
-      title
-      subtitle
-      publisher
-      release_date
-      number_of_purchases
-      rating
-      price
-      image_url
-      available_copies
-      likes
-      tags {
-        name
-      }
-    }
-  }
-`;
-```
-
-What’s actually happening with this code is that
- 
-The BOOK_QUERY variable uses gql, a library that uses tagged template literals to parse the GraphQL query document I defined.
-
-This query document is then passed into the useQuery hook in the BookPage component I created.
- 
-This hook returns three items that are relevant for my purposes; 
-
-1 - loading:  This is true as long as the request is still ongoing and the response hasn’t been received.
-
-2 - Error: In case the request fails, this field will contain information about what exactly went wrong.
-
-3 - data: This is the actual data, in this case, book items that I received from the server. 
-
-Then I  executed and tested the query in the graphQL Playground (against the application schema) and retrieve the results from the GraphQL server. 
-
-The project was styled using CSS. The React components were implemented using the functional component.
-
-
-### Requirement not completed:
-I have been working on implementing the search functionality on the application. 
-This feature is almost in near compIetion. I am yet to complete it. 
-
-
+Run npm install from your terminal.
+Then run npm start. 
+Your server should start running on port 8888.
 
 ## Author
 
@@ -209,16 +155,4 @@ This feature is almost in near compIetion. I am yet to complete it.
 * [GitHub](https://github.com/jamesoyanna)
 * [LinkedIn](https://www.linkedin.com/in/jamesoyanna)
 
-
-`Quidax Book App` Open source software
-## Resources
-
-I made use of these `resources` during development.
-
-* [New React Js Doc](https://beta.reactjs.org/)
-
- * [GraphQl](https://graphql.org/learn/)
-    [Apollo Client](https://www.apollographql.com/docs/react/)
-* [casscading Style Sheet (CSS)
-* [React Context Api](https://reactjs.org/docs/context.html)
 
